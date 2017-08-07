@@ -2,11 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
-
+    buildToolsVersion '23.0.3'
     defaultConfig {
         applicationId "it.rignanese.leo.slimfacebook"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 46
         versionName "3.6.7"
@@ -19,17 +18,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     lintOptions {
         disable 'MissingTranslation'
+    }
+    productFlavors {
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-//    compile 'com.github.delight-im:Android-AdvancedWebView:v2.1.0'
-  //  compile 'com.github.delight-im:Android-AdvancedWebView:da127f967f8dcf0ce5a0297c58e9bef2cc1a5ae8'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //    compile 'com.github.delight-im:Android-AdvancedWebView:v2.1.0'
+    //  compile 'com.github.delight-im:Android-AdvancedWebView:da127f967f8dcf0ce5a0297c58e9bef2cc1a5ae8'
     compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:appcompat-v7:22.+'
     testCompile 'junit:junit:4.12'
-//    compile 'com.anjlab.android.iab.v3:library:1.0.+'
+    //    compile 'com.anjlab.android.iab.v3:library:1.0.+'
+    compile project(':bt-wrapper')
 }
